@@ -1,0 +1,10 @@
+{
+    "ResNet": {
+        "best on train": 0.7530335474660956,
+        "best on test": 0.7459677419354839
+    },
+    "BelkiCNN": {
+        "best on train": 0.5374732334047109,
+        "best on test": 0.5887096774193549
+    }
+}
