@@ -4,5 +4,5 @@ split:
   testSize: 0.15
 
 train:
-  batchSize: 32
+  batchSize: 16
   epochs: 20    
