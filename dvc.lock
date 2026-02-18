@@ -10,8 +10,8 @@ stages:
       nfiles: 1655
     - path: params.yaml
       hash: md5
-      md5: 31438662f0d93397d1df2610023cec61
-      size: 71
+      md5: c0b535b40a61a2d3fd52d033d45ae1c8
+      size: 74
     - path: src/split.py
       hash: md5
       md5: 8ea96fd895abd0039227cb8804c515c1
