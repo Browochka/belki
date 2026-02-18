@@ -1,0 +1,27 @@
+stages:
+  split:
+    cmd: venv/bin/python src/split.py
+    deps:
+      - src/split.py
+      - params.yaml
+      - data/raw
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: venv/bin/python src/train.py
+    deps:
+      - src/train.py
+      - src/preparing.py
+      - src/modeling.py
+      - src/makeplots.py
+      - params.yaml
+      - data/processed/train.csv
+      - data/processed/test.csv
+    outs:
+      - models/
+    metrics:
+      - metrics/summary.json
+    plots:
+      - plots/
