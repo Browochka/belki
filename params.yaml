@@ -1,0 +1,8 @@
+seed: 33
+
+split:
+  testSize: 0.15
+
+train:
+  batchSize: 128
+  epochs: 20

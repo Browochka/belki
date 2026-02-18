@@ -1,10 +1,10 @@
 {
     "ResNet": {
-        "best on train": 0.7530335474660956,
-        "best on test": 0.7459677419354839
+        "best on train": 0.6616702355460385,
+        "best on test": 0.6693548387096774
     },
     "BelkiCNN": {
-        "best on train": 0.5374732334047109,
-        "best on test": 0.5887096774193549
+        "best on train": 0.5339043540328337,
+        "best on test": 0.5725806451612904
     }
 }

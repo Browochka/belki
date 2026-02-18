@@ -1,0 +1,73 @@
+schema: '2.0'
+stages:
+  split:
+    cmd: venv/bin/python src/split.py
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: ba98a010cdc15708d4560a3c2783c819.dir
+      size: 204875516
+      nfiles: 1655
+    - path: params.yaml
+      hash: md5
+      md5: 31438662f0d93397d1df2610023cec61
+      size: 71
+    - path: src/split.py
+      hash: md5
+      md5: 8ea96fd895abd0039227cb8804c515c1
+      size: 1218
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 37343dbcd9b773532ab4beb28f79e900
+      size: 7650
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 506aa26985dc8365c3f8d5a9cef3151e
+      size: 43255
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 37343dbcd9b773532ab4beb28f79e900
+      size: 7650
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 506aa26985dc8365c3f8d5a9cef3151e
+      size: 43255
+    - path: params.yaml
+      hash: md5
+      md5: 7f94c0bcb5e166b329badc7c2fe0d2f8
+      size: 70
+    - path: src/makeplots.py
+      hash: md5
+      md5: 69b95b40be85cc41278a2fd7d50c8681
+      size: 1531
+    - path: src/modeling.py
+      hash: md5
+      md5: b0758f30b947b9b0137d1bb65f710035
+      size: 3743
+    - path: src/preparing.py
+      hash: md5
+      md5: c785c95b5650e7b7eaf681eb3fb584e7
+      size: 1224
+    - path: src/train.py
+      hash: md5
+      md5: 7f4b77caeff1a6e47d69e90f83a438fc
+      size: 2754
+    outs:
+    - path: metrics/summary.json
+      hash: md5
+      md5: 2c3337e769f9ff86e6c7c26a9351b6a7
+      size: 226
+    - path: models/
+      hash: md5
+      md5: 9a8c21743dad2fd20658148c750f7dc1.dir
+      size: 87772330
+      nfiles: 2
+    - path: plots/
+      hash: md5
+      md5: c027bc562ec5a6aa3e94843ceb8d28be.dir
+      size: 161799
+      nfiles: 5
