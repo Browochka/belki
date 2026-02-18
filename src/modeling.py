@@ -4,7 +4,6 @@ class BelkiCNN(nn.Module):
     def __init__(self,numClasses=5):
         super().__init__()
         self.features= nn.Sequential(
-            #блок 1
             nn.Conv2d(in_channels=3,out_channels=32,kernel_size=3,stride=1,padding=1),
             nn.BatchNorm2d(num_features=32),
             nn.ReLU(inplace=True), # inplace true не создает нового тензора, а преобразует имеющийся
@@ -13,7 +12,6 @@ class BelkiCNN(nn.Module):
             nn.ReLU(inplace=True),
             nn.MaxPool2d(2),
             nn.Dropout2d(0.1),
-            #блок 2
             nn.Conv2d(in_channels=32,out_channels=64,kernel_size=3,stride=1,padding=1),
             nn.BatchNorm2d(num_features=64),
             nn.ReLU(inplace=True), 
@@ -22,7 +20,6 @@ class BelkiCNN(nn.Module):
             nn.ReLU(inplace=True),
             nn.MaxPool2d(2),
             nn.Dropout2d(0.15),
-            #блок 3
             nn.Conv2d(in_channels=64,out_channels=128,kernel_size=3,stride=1,padding=1),
             nn.BatchNorm2d(num_features=128),
             nn.ReLU(inplace=True), 
@@ -31,7 +28,6 @@ class BelkiCNN(nn.Module):
             nn.ReLU(inplace=True),
             nn.MaxPool2d(2),
             nn.Dropout2d(0.2),
-            # последний блок
             nn.Conv2d(in_channels=128,out_channels=256,kernel_size=3,stride=1,padding=1),
             nn.BatchNorm2d(num_features=256),
             nn.ReLU(inplace=True),
