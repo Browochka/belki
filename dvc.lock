@@ -10,8 +10,8 @@ stages:
       nfiles: 1655
     - path: params.yaml
       hash: md5
-      md5: c0b535b40a61a2d3fd52d033d45ae1c8
-      size: 74
+      md5: 5b617fc998ce6d1bdf3aa01d1a52200e
+      size: 70
     - path: src/split.py
       hash: md5
       md5: 8ea96fd895abd0039227cb8804c515c1
@@ -26,7 +26,7 @@ stages:
       md5: 506aa26985dc8365c3f8d5a9cef3151e
       size: 43255
   train:
-    cmd: python src/train.py
+    cmd: venv/bin/python src/train.py
     deps:
     - path: data/processed/test.csv
       hash: md5
@@ -38,7 +38,7 @@ stages:
       size: 43255
     - path: params.yaml
       hash: md5
-      md5: 7f94c0bcb5e166b329badc7c2fe0d2f8
+      md5: 5b617fc998ce6d1bdf3aa01d1a52200e
       size: 70
     - path: src/makeplots.py
       hash: md5
@@ -59,15 +59,15 @@ stages:
     outs:
     - path: metrics/summary.json
       hash: md5
-      md5: 2c3337e769f9ff86e6c7c26a9351b6a7
+      md5: 214f7256afa61fc22fc2e7eca07b0e83
       size: 226
     - path: models/
       hash: md5
-      md5: 9a8c21743dad2fd20658148c750f7dc1.dir
+      md5: 8a983cd386dd13ceef3e072338c4d37c.dir
       size: 87772330
       nfiles: 2
     - path: plots/
       hash: md5
-      md5: c027bc562ec5a6aa3e94843ceb8d28be.dir
-      size: 161799
+      md5: 9362e321b5fdd86d2d5d469547a96961.dir
+      size: 161683
       nfiles: 5

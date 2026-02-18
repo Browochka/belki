@@ -5,4 +5,4 @@ split:
 
 train:
   batchSize: 32
-  epochs: 20    
+  epochs: 25
